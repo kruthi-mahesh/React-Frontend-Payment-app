@@ -61,7 +61,7 @@ class ShopCustomerComponent extends Component {
             balance: values.balance,
         }
 
-        if (this.state.id === -1) {
+        if (this.state.id == -1) {
             ShopCustomerService.addCustomer(shopId, customerId, shopCustomer)
                 .then(() => this.props.history.push('/shopCustomers'))
         } else {
