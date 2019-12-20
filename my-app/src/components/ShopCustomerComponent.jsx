@@ -41,9 +41,7 @@ class ShopCustomerComponent extends Component {
 
     validate(values) {
         let errors = {}
-        if (!values.customerEmail) {
-            errors.description = 'Enter customer email'
-        }
+        
 
         return errors
 
