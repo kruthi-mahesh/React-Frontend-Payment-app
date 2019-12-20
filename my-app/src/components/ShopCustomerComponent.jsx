@@ -41,18 +41,16 @@ class ShopCustomerComponent extends Component {
 
     validate(values) {
         let errors = {}
-        if (!values.customerId) {
-            errors.description = 'Enter a valid customer id'
+        if (!values.customerEmail) {
+            errors.description = 'Enter customer email'
         }
-        else if (!values.balance) {
-            errors.description = 'Enter a balance amount'
-        } 
 
         return errors
 
     }
 
     onSubmit(values) {
+        console.log(values);
         let shopId = SHOPID
 
         let customerId = values.customerId
