@@ -15,9 +15,9 @@ class CustomerService {
         return axios.get(`${CUSTOMER_API_URL}/${id}`);
     }
 
-    retrieveCustomerByEmail(email) {
+    async retrieveCustomerByEmail(email) {
         //console.log('executed service')
-        return axios.get(`${CUSTOMER_API_URL}/by_email/${email}`);
+        return await axios.get(`${CUSTOMER_API_URL}/by_email/${email}`);
     }
 
     deleteCustomer(id) {

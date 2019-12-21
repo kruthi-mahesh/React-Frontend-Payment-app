@@ -49,16 +49,16 @@ class ShopCustomerComponent extends Component {
             }))
     }
 
-    async validate(values) {
+    validate(values) {
         let errors = {}
         //let isExist = false
-        let currentComponent = this
+        //let currentComponent = this
         if (!values.customerEmail) {
             errors.customerEmail = <div>  <strong>ERROR!</strong>  Customer Email field should not be empty.</div>
             return errors
         }
         else {
-            await CustomerService.retrieveCustomerByEmail(values.customerEmail)           
+            CustomerService.retrieveCustomerByEmail(values.customerEmail)           
             .catch(function (error) {
                 if (error.response) {
                   // The request was made and the server responded with a status code
@@ -87,7 +87,7 @@ class ShopCustomerComponent extends Component {
     }
 
     onSubmit(values) {
-        console.log(values);
+        //console.log(values);
         let shopId = SHOPID
 
         let customerId = values.customerId
@@ -110,7 +110,7 @@ class ShopCustomerComponent extends Component {
                 .then(() => this.props.history.push('/shopCustomers'))
         }
 
-        console.log(values);
+        //console.log(values);
     }
 
     render() {
